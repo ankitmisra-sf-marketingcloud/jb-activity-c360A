@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JB Split Activity</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script
+      data-main="js/main.js"
+      type="text/javascript"
+      src="js/require.js"
+    ></script>
+    <link rel="stylesheet" href="salesforce-lightning-design-system.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style type="text/css">
+      body {
+        padding: 15px;
+        margin: 0;
+        font-size: 11px;
+        color: #16325c;
+        font-family: "Salesforce Sans", Arial, sans-serif;
+      }
+
+      .step {
+        display: none;
+      }
+
+      #step2 {
+        display: block;
+      }
+
+      /* input {
+			font-family: inherit;
+			display: block;
+			padding: 4px 5px;
+			font-size: 11px;
+			color: #16325c;
+			background-color: #ffffff;
+			background-image: none;
+			border: 1px solid #d8dde6;
+			border-radius: 0.25rem;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		input[type=text] {
+			width: 95%;
+			margin-bottom: 40px;
+		} */
+
+      .inputLabel {
+        margin-bottom: 5px;
+        font-size: 8pt;
+        color: #808080;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="step1" class="step">
+      <!-- <p>Selecting the model type for Journey activity.</p>
+		<p class="inputLabel">Model Select</p>
+		<input id="select-entryevent-defkey" placeholder="journey entry event's event definition key" type="text"
+			required="required" disabled="disabled" minlength="1" /> -->
+      <div class="row radio-group">
+        <div
+          class="radio-toolbar col-2"
+          style="padding-left: 0px;
+		      max-width: 165px;"
+        >
+          <input type="radio" id="radioABC" name="radio" value="ABC" checked />
+          <label
+            class="slds-button_neutral slds-m-right_medium selLabel radio"
+            for="radioABC"
+            data-value="click_conversion"
+            >Demo-1</label
+          >
+        </div>
+        <div
+          class="radio-toolbar col-2"
+          style="padding-left: 0px;
+		      max-width: 165px;"
+        >
+          <input type="radio" id="radioDEF" name="radio" value="ABC" checked />
+          <label
+            class="slds-button_neutral slds-m-right_medium selLabel radio"
+            for="radioABC"
+            data-value="web_conversion"
+            >Demo-2</label
+          >
+        </div>
+        <!-- <div class="radio-toolbar col-2"="padding-left: 0px;
+		    max-width: 13%;">
+		        <input type="radio" id="radioXYZ" name="radio" value="ABC" checked />
+		        <label class="slds-button_neutral slds-m-right_medium selLabel radio" for="radioABC"
+		          data-value="audience_segments">Audience Segments</label>
+		      </div> -->
+      </div>
+      <footer class="slds-card__footer" style="margin-top: 2rem;">
+        JB Split Activity Demo
+      </footer>
+    </div>
+    <div id="step2" class="step">
+      <!-- <p>Please select the ID (event data column) to pass to the custom split backend.</p>
+		<p class="inputLabel">ID</p> -->
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="select-id"
+          >Data Extension</label
+        >
+        <div class="slds-form-element__control">
+          <input
+            type="text"
+            id="select-id"
+            class="slds-input"
+            placeholder="Enter DE to pass to the backend"
+          />
+        </div>
+      </div>
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="select-id-1">ID</label>
+        <div class="slds-form-element__control">
+          <input
+            type="text"
+            id="select-id-1"
+            class="slds-input"
+            placeholder="Enter ID to pass to the backend"
+          />
+        </div>
+      </div>
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="datetimepicker"
+          >Date</label
+        >
+        <div class="slds-form-element__control">
+          <input
+            type="date"
+            id="datetimepicker"
+            class="slds-input"
+            placeholder="Enter Date"
+          />
+        </div>
+      </div>
+      <script src="utilityScript.js"></script>
+      <!-- <input id="select-id" placeholder="ID to pass to the backend" type="text" />
+		<input id="select-id-1" placeholder="DE to pass to the backend" type="text" />
+		<select id="select-id-dropdown">
+		</select> -->
+      <footer class="slds-card__footer" style="margin-top: 2rem;">
+        JB Split Activity Demo
+      </footer>
+    </div>
+  </body>
+</html>

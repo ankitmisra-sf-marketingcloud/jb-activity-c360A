@@ -1,0 +1,104 @@
+{
+	"key": "d2952238-ab93-4ccd-ad80-7622b7629d28",
+	"metaData": {
+		"icon": "images/icon.png",
+		"iconSmall": "images/icon_small.png"
+	},
+	"type": "RESTDECISION",
+	"lang": {
+		"en-US": {
+			"name": "Hux Intelligent Segments",
+			"description": "Custom Split activity that makes a decision based on data from Decisioning engine"
+		}
+	},
+	"workflowApiVersion": "1.1",
+	"configurationArguments": {
+		"applicationExtensionKey": "d2952238-ab93-4ccd-ad80-7622b7629d28",
+		"save": {
+			"url": "https://jb-split-activity.herokuapp.com/activity/save",
+			"verb": "POST",
+			"body": "",
+			"useJwt": true
+		},
+		"publish": {
+			"url": "https://jb-split-activity.herokuapp.com/activity/publish",
+			"verb": "POST",
+			"body": "",
+			"useJwt": true
+		},
+		"validate": {
+			"url": "https://jb-split-activity.herokuapp.com/activity/validate",
+			"verb": "POST",
+			"body": "",
+			"useJwt": true
+		}
+	},
+	"wizardSteps": [{
+			"key": "eventdefinitionkey",
+			"label": "Model Selector"
+		},
+		{
+			"key": "idselection",
+			"label": "Config Set Up"
+		}
+	],
+	"outcomes": [{
+			"arguments": {
+				"branchResult": "verylikely"
+			},
+			"metaData": {
+				"label": "Very Likely"
+			}
+		},
+		{
+			"arguments": {
+				"branchResult": "likely"
+			},
+			"metaData": {
+				"label": "Likely"
+			}
+		},
+		{
+			"arguments": {
+				"branchResult": "neutral"
+			},
+			"metaData": {
+				"label": "Neutral"
+			}
+		},
+		{
+			"arguments": {
+				"branchResult": "unlikely"
+			},
+			"metaData": {
+				"label": "Unlikely"
+			}
+		}
+	],
+	"userInterfaces": {
+		"runningModal": {
+			"url": "runningModal.html"
+		},
+		"runningHover": {
+			"url": "runningHover.html"
+		}
+	},
+	"arguments": {
+		"execute": {
+			"inArguments": [],
+			"outArguments": [],
+			"url": "https://jb-split-activity.herokuapp.com/activity/execute",
+			"verb": "POST",
+			"body": "",
+			"header": "",
+			"format": "json",
+			"useJwt": true,
+			"timeout": 90000
+		}
+	},
+	"edit": {
+		"url": "https://jb-split-activity.herokuapp.com/index.html",
+		"height": 230,
+		"width": 500
+	}
+}
